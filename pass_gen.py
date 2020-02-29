@@ -1,4 +1,5 @@
 # coding=utf-8
+# simply
 # in the process
 # enumeration of all possible combinations from 4 lists:
 
@@ -14,19 +15,37 @@ class Db(object):
     def __str__(self):
         pass
 
-    def meth_create(self):
+    # def meth_create(self):
+    #     forbidden_symbols = ["%", "`", " ", ".", ","]
+    #     self.create = self.unit - 1
+    #     #print("Warning: ", self.name)
+    #     self.list = []
+    #     for i in range(self.unit):
+    #         n = input(">>> List the characters for generating the password in the list:" )
+    #         print("You have characters for this list:", self.create)
+    #         if n not in forbidden_symbols:
+    #             self.list.append(n)
+    #         else:
+    #             print("Unacceptable symbols!")
+    #             self.unit += 1
+    #         self.create -= 1
+    #     return self.list
+    
+        def meth_create(self):
         forbidden_symbols = ["%", "`", " ", ".", ","]
         self.create = self.unit - 1
         self.list = []
-        for i in range(self.unit):
+        while self.unit != 0:
             n = input(">>> List the characters for generating the password in the list:" )
             print("You have characters for this list:", self.create)
             if n not in forbidden_symbols:
                 self.list.append(n)
+                self.unit -= 1
+                self.create -= 1
             else:
                 print("Unacceptable symbols!")
-                self.unit += 1
-            self.create -= 1
+            if self.create <= 0:
+                self.create = 0
         return self.list
 
     def meth_generation(self, l1, l2, l3, l4):
