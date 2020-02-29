@@ -75,7 +75,7 @@ def ask(question, list_gen):
             #print(list_gen)
             choice = random.choice(list_gen)
             print("Your randomly selected password:")
-            print(choice)
+            print("< ", choice, " >")
         elif response == "no":
             print("Bye. Good luck.")
         else:
