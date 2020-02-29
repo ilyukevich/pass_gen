@@ -60,7 +60,8 @@ class Db(object):
                     for i in self.list4:
                         self.list5.append(k + m + n + i)
         return self.list5
-
+    
+    #in the process
     def meth_pswd(self):
         passw = random.choice(self.list5)
         return passw
