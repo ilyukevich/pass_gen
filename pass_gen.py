@@ -9,7 +9,7 @@ class Db(object):
 
     def __init__(self, unit):
         self.unit = unit
-        self.create = unit * 4
+        #self.create = unit * 4
 
     #in the process
     def __str__(self):
